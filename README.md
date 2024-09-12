@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Proyecto Análisis rubro gastronómico en principales polos de Estados Unidos
 
 <p align="center">
@@ -48,4 +47,4 @@
 </table>
 =======
 ## Proyecto Análisis rubro gastronómico en principales polos de Estados Unidos
->>>>>>> 9c381d6964ce7079711911b3d6427333ceee869c
+
