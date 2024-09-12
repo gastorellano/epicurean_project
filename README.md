@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Proyecto Análisis rubro gastronómico en principales polos de Estados Unidos
 
 <p align="center">
@@ -45,3 +46,6 @@
     <td align="center"><a href="https://www.linkedin.com/in/melanie-butus-7013551a9/"><img src="/IMG/lkd.png" alt="LinkedIn" width="40"/></a></td>
   </tr>
 </table>
+=======
+## Proyecto Análisis rubro gastronómico en principales polos de Estados Unidos
+>>>>>>> 9c381d6964ce7079711911b3d6427333ceee869c
