@@ -17,7 +17,7 @@
   6. [Análisis Exploratorio](#análisis-exploratorio)
   7. [KPI](#kpi)
   8. [Metodología de Trabajo](#metodología-de-trabajo)
-  9. [Cronología](#cronología)
+  9. [Cronología](#cronología-de-trabajo)
   10. [Equipo de Trabajo](#equipo-de-trabajo)
 
 </details>
