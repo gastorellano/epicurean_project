@@ -86,7 +86,7 @@ Se observa que la columna “Rating” sigue el sistema de calificación de Goog
 
 Determinada la calidad del dato, podemos observar ciertos insights que dan cuenta de la viabilidad del proyecto propuesto, sobre la industria gastronómica en el Estado de Florida.
 
-Puede analizarse en profundidad en la [carpeta](/Data%20Analytics/) correspondiente.
+Puede analizarse en profundidad en la [carpeta](/Analisis%20preliminar/) correspondiente.
 
 
 ## KPI
