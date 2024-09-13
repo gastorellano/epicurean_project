@@ -92,31 +92,34 @@ Puede analizarse en profundidad en la [carpeta](/Analisis%20preliminar/) corresp
 ## KPI
 Se han definido los siguientes KPI:
 
-**KPI 1:** Incrementar en un 5% trimestral la cantidad de reseñas del establecimiento gastronómico.  
+**KPI 1: Incrementar en un 5% trimestral la cantidad de reseñas del establecimiento gastronómico.**  
+
 **Definición:** Este KPI mide la popularidad y visibilidad de los establecimientos en función del crecimiento en el número de reseñas obtenidas en un período determinado. Se enfoca en monitorear cómo las estrategias de marketing y servicio al cliente están incentivando a los consumidores a dejar reseñas.  
 Para establecer una línea de referencia inicial, los datos del trimestre anterior se calcularán utilizando los promedios de las reseñas obtenidas por los locales de la competencia directa en el mismo período. Esto permitirá evaluar el rendimiento del establecimiento en relación con sus competidores más cercanos.
 
 **Fórmula:**
 
-KPI = ((Cant. Reseñas (tri actual) − Cant. Reseñas (tri ant)) / Cant. Reseñas (tri ant)) x 100%
+*KPI = ((Cant. Reseñas (tri actual) − Cant. Reseñas (tri ant)) / Cant. Reseñas (tri ant)) x 100%*
 
 ---
 
-**KPI 2:** Incrementar en un 5% trimestral la oferta de servicios externos.  
+**KPI 2: Incrementar en un 5% trimestral la oferta de servicios externos.**
+
 **Definición:** Este KPI tiene el objetivo de aumentar el consumo en los servicios que no requieren consumo en el local (por ejemplo, pick up o delivery), que son más habituales en zonas tech.
 
 **Fórmula:**
 
-KPI = ((Servicios externos (tri actual) − Servicios externos (tri ant)) / Servicios externos (tri ant)) x 100%
+*KPI = ((Servicios externos (tri actual) − Servicios externos (tri ant)) / Servicios externos (tri ant)) x 100%*
 
 ---
 
-**KPI 3:** Incrementar en un 5% cada bimestre la cantidad de valoraciones de 4 y 5 estrellas.  
+**KPI 3: Incrementar en un 5% cada bimestre la cantidad de valoraciones de 4 y 5 estrellas.**
+
 **Definición:** Este KPI mide la evolución de la percepción positiva de los clientes sobre la calidad del establecimiento, buscando un crecimiento continuo en las valoraciones positivas (4 o más estrellas) cada dos meses.
 
 **Fórmula:**
 
-KPI = ((Cant. ≥4 (bimestre actual) − Cant. ≥4 (bimestre ant)) / Cant. ≥4 (bimestre ant)) x 100%
+*KPI = ((Cant. ≥4 (bimestre actual) − Cant. ≥4 (bimestre ant)) / Cant. ≥4 (bimestre ant)) x 100%*
 
 ## Metodología de Trabajo
 En EPICUREAN implementamos la metodología SCRUM, que se caracteriza por su flexibilidad, permitiendo adaptarse rápidamente a los cambios y necesidades del proyecto, y fomentando la transparencia a través de una comunicación abierta y constante. Además, promueve la responsabilidad compartida dentro del equipo, asegurando que todos estén alineados con los objetivos comunes. SCRUM se organiza en iteraciones llamadas sprints, que permiten recibir feedback continuo y mejorar de manera incremental.
