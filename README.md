@@ -164,4 +164,3 @@ A continuación puede analizarse el cronograma de trabajo implementado, a travé
     <td align="center"><a href="https://www.linkedin.com/in/melanie-butus-7013551a9/"><img src="/IMG/lkd.png" alt="LinkedIn" width="40"/></a></td>
   </tr>
 </table>
-
