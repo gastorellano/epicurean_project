@@ -66,7 +66,7 @@ Los mismos son detallados [aquí](/IMG/STACK%20TEC/README.md), y a continuación
 ## Ciclo de vida del dato. 
 
 <p align="center">
-  <img src="/IMG/Stack Tec.jpeg" alt="Tecnología utilizada" />
+  <img src="/IMG/STACK TEC/Pipeline.jpeg" alt="Tecnología utilizada" />
 </p>
 
 ## Análisis Exploratorio
