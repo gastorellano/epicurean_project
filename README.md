@@ -138,9 +138,9 @@ A continuación puede analizarse el cronograma de trabajo implementado, a travé
 
 <table align="center">
   <tr>
-    <td align="center"><b>Yesica Méndez</b></td>
+    <td align="center"><b>Yesica Méndez Aroca</b></td>
     <td align="center"><b>Analía Romano</b></td>
-    <td align="center"><b>Sebastián López</b></td>
+    <td align="center"><b>Sebastián López Bianchessi</b></td>
     <td align="center"><b>Gastón Orellano</b></td>
   </tr>
   <tr>

@@ -90,3 +90,5 @@ Para desplegar el modelo en una API, se utiliza FastAPI. En el archivo sistema_r
 - Declarar endpoints HTTP:
 En el archivo principal de la API, se declara cada uno de los endpoints que corresponden a los sistemas de recomendación desarrollados. Estos endpoints permiten la interacción con la API para realizar recomendaciones basadas en diferentes criterios.
 
+## Prueba del Sistema de Recomendación:
+Puedo ver la prueba de mi sistema de recomendación [aquí](https://drive.google.com/file/d/1L5St4tRXbFGrvCxId5KMWVALMLEPTQJ0/view?usp=sharing).
