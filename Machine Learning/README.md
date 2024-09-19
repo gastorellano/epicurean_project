@@ -19,6 +19,10 @@ Tras la carga de datos, se realiza un proceso de ETL, eliminación de registros 
 Se crea un archivo unificado, que se usará para uno de los modelos, que cuenta con aquellos reviews con reseñas escritas, y se eliminan las columnas que no se van a utilizar en el modelo.
 A continuación, se detallarán los pasos para el desarrollo de los modelos.
 
+<p align="center">
+  <img src="/IMG/desarrollo-MVP.jpeg" alt="MVP" />
+</p>
+
 ## Forma de desarrollo e implementación
 - Importación de Galerías necesarias:
 Previo a cualquier desarrollo, deben instalarse y descargarse las galerías necesarias.
@@ -72,7 +76,7 @@ Para realizar la recomendación, se toman en cuenta los siguientes pasos:
 El modelo convierte el texto de las reseñas en una representación numérica utilizando la técnica TF-IDF (Term Frequency-Inverse Document Frequency). Esto permite cuantificar la relevancia de las palabras en las reseñas, excluyendo palabras comunes en inglés que no aportan mucho al análisis (palabras vacías o "stop words"). Se realiza esta transformación tanto en las reseñas del restaurante como en todas las reseñas del DataFrame unificado, lo que facilita la comparación.
 
 **Cálculo de la similitud entre reseñas**: 
-Una vez vectorizadas las reseñas, se utiliza la similitud del coseno para comparar las reseñas del restaurante seleccionado con todas las reseñas del DataFrame. La similitud del coseno mide cuán similares son dos textos basados en la orientación de sus vectores en el espacio TF-IDF. Se toma la media de la similitud de todas las reseñas del restaurante para compararlas con el resto de los locales.
+Una vez vectorizadas las reseñas, se utiliza la similitud del coseno (medida que cuantifica la semejanza entre dos vectores, calculando el coseno del ángulo entre ellos) para comparar las reseñas del restaurante seleccionado con todas las reseñas del DataFrame . La similitud del coseno mide cuán similares son dos textos basados en la orientación de sus vectores en el espacio TF-IDF. Se toma la media de la similitud de todas las reseñas del restaurante para compararlas con el resto de los locales.
 
 **Selección de las reseñas más similares**: 
 La función ordena las reseñas en base a la similitud obtenida, priorizando aquellas con mayor similitud a las reseñas del restaurante de entrada. Luego, selecciona los top_n restaurantes (5 por defecto) con reseñas similares.
