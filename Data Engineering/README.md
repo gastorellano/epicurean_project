@@ -1,12 +1,11 @@
 # Ingeniería de Datos: ETL, Estructura implementada y automatización
+
+
 <p align="center">
   <img src="/IMG/ingenieria-datos.jpg" alt="ingenieria" />
 </p>
 
 A continuación se realizará una explicación detallada de los procedimientos desarrollados. Puedes visualizar el funcionamiento en [este video](https://www.youtube.com/watch?v=tu_video_id).
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=8_UMW77SLqo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Descripción General
 En esta etapa se promovió la creación de un **Data Warehouse** (DW) automatizado utilizando Google Cloud Platform (GCP), Google Storage, Google BigQuery y Apache Airflow para la automatización del pipeline ETL. La estructura de datos implementada permite la carga, transformación y análisis de grandes volúmenes de datos de forma eficiente y escalable. Se ha trabajado en la construcción de pipelines para la ingesta de datos hacia el **Data Warehouse**, así como en la validación y automatización del proceso ETL.
@@ -79,13 +78,12 @@ Se ha establecido una conexión con la **API de Google Maps** para realizar una 
 Se han implementado pasos de validación de datos dentro del pipeline ETL. Esto incluye la verificación de formatos y la consistencia de los datos antes de ser cargados al **Data Warehouse**, garantizando la calidad de la información almacenada.
 
 ### 10. Diccionario de Datos:
-# Diccionario de Datos:
 Puede ser de utilidad el diccionario de los datos utilizados, a partir de las tablas y datasets.
 Se puede acceder a los mismos [aquí][https://docs.google.com/document/d/12K4dz8ffNsChKgihCfpXEN-vhH1fH6C1vZFpXCwZwhs/edit?usp=sharing].
 
 
 
-## Workflow de Tecnologías Utilizadas
+# Workflow de Tecnologías Utilizadas
 El siguiente es un flujo detallado del proceso implementado y las tecnologías involucradas:
 
 1. **Ingesta de Datos**:
