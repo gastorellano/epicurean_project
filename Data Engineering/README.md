@@ -5,7 +5,7 @@
   <img src="/IMG/ingenieria-datos.jpg" alt="ingenieria" />
 </p>
 
-A continuación se realizará una explicación detallada de los procedimientos desarrollados. Puedes visualizar el funcionamiento en [este video](https://www.youtube.com/watch?v=tu_video_id).
+A continuación se realizará una explicación detallada de los procedimientos desarrollados. Puedes visualizar el funcionamiento en [este video](https://www.youtube.com/watch?v=8_UMW77SLqo).
 
 ## Descripción General
 En esta etapa se promovió la creación de un **Data Warehouse** (DW) automatizado utilizando Google Cloud Platform (GCP), Google Storage, Google BigQuery y Apache Airflow para la automatización del pipeline ETL. La estructura de datos implementada permite la carga, transformación y análisis de grandes volúmenes de datos de forma eficiente y escalable. Se ha trabajado en la construcción de pipelines para la ingesta de datos hacia el **Data Warehouse**, así como en la validación y automatización del proceso ETL.
