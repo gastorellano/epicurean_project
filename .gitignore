@@ -1,2 +1,5 @@
 # Ignorar la carpeta "data parcial" dentro de DATA
 DATA/data parcial/
+venv/
+__pycache__/
+Machine Learning/__pycache__/
