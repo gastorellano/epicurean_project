@@ -67,3 +67,6 @@ Notamos un sesgo en la información, justificada en el crecimiento de la cantida
 Lo observado hasta aquí nos permite determinar que tenemos viabilidad suficiente para proporcionar a las empresas del sector gastronómico y afines la información necesaria para tomar decisiones estratégicas sobre dónde invertir o expandir sus operaciones dentro del Estado de California. 
 Dependiendo del tipo de producto o servicio que ofrezcan, es posible que algunas empresas tengan mejores oportunidades en zonas urbanas cercanas a polos tecnológicos, mientras que otras se beneficiarán más en zonas turísticas con alto flujo de visitantes. 
 A través del análisis de datos de mercado, nuestro informe identificará las áreas más rentables, ofreciendo recomendaciones personalizadas para maximizar el retorno de inversión en función de las características de cada empresa.
+
+---
+<a href="https://www.linkedin.com/in/gaston-orellano/"><img src="/IMG/lkd.png" alt="LinkedIn" width="40"/></a>

@@ -94,3 +94,6 @@ En el archivo principal de la API, se declara cada uno de los endpoints que corr
 
 ## Prueba del Sistema de Recomendación:
 Puedo ver la muestra de mi sistema de recomendación [aquí](https://drive.google.com/file/d/1L5St4tRXbFGrvCxId5KMWVALMLEPTQJ0/view?usp=sharing).
+
+---
+<a href="https://www.linkedin.com/in/gaston-orellano/"><img src="/IMG/lkd.png" alt="LinkedIn" width="40"/></a>
