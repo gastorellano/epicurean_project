@@ -79,7 +79,7 @@ Se han implementado pasos de validación de datos dentro del pipeline ETL. Esto 
 
 ### 10. Diccionario de Datos:
 Puede ser de utilidad el diccionario de los datos utilizados, a partir de las tablas y datasets.
-Se puede acceder a los mismos [aquí][https://docs.google.com/document/d/12K4dz8ffNsChKgihCfpXEN-vhH1fH6C1vZFpXCwZwhs/edit?usp=sharing].
+Se puede acceder a los mismos [aquí](https://docs.google.com/document/d/12K4dz8ffNsChKgihCfpXEN-vhH1fH6C1vZFpXCwZwhs/edit?usp=sharing).
 
 
 
