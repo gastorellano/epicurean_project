@@ -4,8 +4,10 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Cargar el archivo de datos (ajusta la ruta a tu archivo)
-df_business = pd.read_parquet(r'C:\Users\GASTON\Desktop\PROYECTO FINAL\DATA\locales_google.parquet')  # Tabla de negocios
-df_reviews = pd.read_parquet(r'C:\Users\GASTON\Desktop\PROYECTO FINAL\DATA\ml_unificado.parquet')  # Tabla de reseñas con datos en 'text' unificada con los negocios
+#df_business = pd.read_parquet(r'C:\Users\GASTON\Desktop\PROYECTO FINAL\DATA\locales_google.parquet')
+#df_reviews = pd.read_parquet(r'C:\Users\GASTON\Desktop\PROYECTO FINAL\DATA\ml_unificado.parquet')
+df_business = pd.read_parquet('../../DATA/locales_google.parquet')
+df_reviews = pd.read_parquet('../../DATA/ml_unificado.parquet')
 
 def weighted_rating(x, m, C):
     v = x['num_of_reviews']
@@ -13,16 +15,12 @@ def weighted_rating(x, m, C):
     return (v / (v + m) * R) + (m / (v + m) * C)
 
 def recomendacion_comida_ciudad(df, tipo_comida, ciudad, top_n=5):
-    '''
-    Esta función recibe un DataFrame sobre el que trabaja, el tipo de comida y la ciudad que se busca.
-    Devuelve una recomendación de los locales con mejor puntuación ponderada que coincidan con esos criterios.
-    '''
     # Filtrar por tipo de comida y ciudad
     df_filtrado = df[(df['category'].str.contains(tipo_comida, case=False, na=False)) & 
                      (df['city'].str.contains(ciudad, case=False, na=False))]
     
     if df_filtrado.empty:
-        return f"No se encontraron restaurantes de {tipo_comida} en {ciudad}."
+        return pd.DataFrame()  # Devuelve un DataFrame vacío si no hay resultados
     
     # Agrupar por gmap_id para evitar duplicados
     df_agrupado = df_filtrado.groupby('gmap_id').agg({
@@ -44,72 +42,25 @@ def recomendacion_comida_ciudad(df, tipo_comida, ciudad, top_n=5):
     
     return df_top5[['name', 'address', 'category', 'avg_rating', 'num_of_reviews', 'puntuacion']]
 
-# Interfaz de Streamlit
-st.title("Recomendaciones de Restaurantes")
-
-# Inputs del usuario
-tipo_comida = st.text_input("Ingrese el tipo de comida:", "Pizza")
-ciudad = st.text_input("Ingrese la ciudad:", "San Francisco")
-top_n = st.number_input("Cantidad de recomendaciones:", min_value=1, max_value=10, value=5)
-
-# Botón para ejecutar la recomendación
-if st.button("Obtener Recomendaciones"):
-    resultado = recomendacion_comida_ciudad(df_business, tipo_comida, ciudad, top_n)
-    
-    # Verificar si es un mensaje de error o un DataFrame
-    if isinstance(resultado, str):
-        st.write(resultado)
-    else:
-        st.write("Top recomendaciones:")
-        st.dataframe(resultado)  # Mostrar el DataFrame como tabla
-
-
 def recomendacion_por_zona(df, ciudad, top_n=5, min_reviews=10):
-    '''
-    Esta función recibe un DataFrame y una ciudad o zona del Estado de California.
-    Devuelve un top N de los mejores locales según la calificación ponderada.
-    '''
     # Filtrar por ciudad
     df_filtrado = df[df['city'].str.contains(ciudad, case=False, na=False)]
 
     if df_filtrado.empty:
-        return f"No se encontraron restaurantes en {ciudad}."
+        return pd.DataFrame()  # Devuelve un DataFrame vacío si no hay resultados
 
     # Filtrar restaurantes con un mínimo de reseñas
     df_filtrado = df_filtrado[df_filtrado['num_of_reviews'] >= min_reviews]
 
     if df_filtrado.empty:
-        return f"No se encontraron restaurantes con al menos {min_reviews} reseñas en {ciudad}."
+        return pd.DataFrame()  # Devuelve un DataFrame vacío si no hay resultados
 
     # Ordenar por calificación promedio y número de reseñas
     df_top5 = df_filtrado.sort_values(['avg_rating', 'num_of_reviews'], ascending=[False, False]).head(top_n)
     
     return df_top5[['name', 'avg_rating', 'num_of_reviews', 'category', 'address']]
 
-# Interfaz de Streamlit
-st.title("Recomendaciones por Zona")
-
-# Inputs del usuario
-ciudad = st.text_input("Ingrese la ciudad:", "Los Angeles")
-top_n = st.number_input("Cantidad de recomendaciones:", min_value=1, max_value=10, value=5, key='top_n_zona')
-
-# Botón para ejecutar la recomendación
-if st.button("Obtener Recomendaciones por Zona", key='btn_zona'):
-    resultado = recomendacion_por_zona(df_business, ciudad, top_n)
-
-    if isinstance(resultado, str):
-        st.write(resultado)
-    else:
-        st.write("Top recomendaciones:")
-        st.dataframe(resultado)  # Mostrar el DataFrame como tabla
-
-
 def recomendacion_segun_palabras(df_unificado, palabras_clave, min_reviews=10):
-    '''
-    Esta función recibe un DataFrame y una lista de palabras clave.
-    Busca las reseñas que tengan esas palabras clave, y las ordena según la puntuación ponderada.
-    Devuelve una tabla con los locales mejor ponderados.
-    '''
     # Unir las palabras clave en una expresión regular
     palabras_regex = '|'.join([f'\\b{palabra.strip()}\\b' for palabra in palabras_clave])
 
@@ -117,7 +68,7 @@ def recomendacion_segun_palabras(df_unificado, palabras_clave, min_reviews=10):
     df_filtrado = df_unificado[df_unificado['text'].str.contains(palabras_regex, case=False, na=False)]
 
     if df_filtrado.empty:
-        return "No se encontraron reseñas con las palabras clave."
+        return pd.DataFrame()  # Devuelve un DataFrame vacío si no hay resultados
 
     # Agrupar por gmap_id
     df_agrupado = df_filtrado.groupby('gmap_id').agg({
@@ -135,42 +86,19 @@ def recomendacion_segun_palabras(df_unificado, palabras_clave, min_reviews=10):
     df_agrupado = df_agrupado[df_agrupado['num_of_reviews'] >= min_reviews]
 
     if df_agrupado.empty:
-        return f"No se encontraron restaurantes con al menos {min_reviews} reseñas que contengan las palabras clave."
+        return pd.DataFrame()  # Devuelve un DataFrame vacío si no hay resultados
 
     # Ordenar por calificación promedio y número de reseñas
     df_top = df_agrupado.sort_values(['avg_rating', 'num_of_reviews'], ascending=[False, False]).head(10)
 
     return df_top[['name', 'address', 'city', 'category', 'avg_rating', 'num_of_reviews', 'text']]
 
-# Interfaz de Streamlit
-st.title("Recomendaciones según Palabras Clave")
-
-# Inputs del usuario
-palabras_clave = st.text_input("Ingrese las palabras clave (separadas por comas):", "delicioso, servicio rápido")
-min_reviews = st.number_input("Mínimo de reseñas:", min_value=1, value=10, key='min_reviews_palabras')
-
-# Botón para ejecutar la recomendación
-if st.button("Obtener Recomendaciones por Palabras Clave", key='btn_palabras'):
-    palabras = [palabra.strip() for palabra in palabras_clave.split(',')]
-    resultado = recomendacion_segun_palabras(df_business, palabras, min_reviews)
-
-    if isinstance(resultado, str):
-        st.write(resultado)
-    else:
-        st.write("Top recomendaciones:")
-        st.dataframe(resultado)  # Mostrar el DataFrame como tabla
-
-
 def recomendacion_reviews_similares(df_unificado, nombre_restaurante, top_n=5):
-    '''
-    Esta función recibe un DataFrame y el nombre de un local gastronómico.
-    Devolverá una recomendación de locales similares, basándose en reseñas.
-    '''
     # Filtrar el DataFrame para encontrar el restaurante
     df_restaurante = df_unificado[df_unificado['name'].str.contains(nombre_restaurante, case=False, na=False)]
 
     if df_restaurante.empty:
-        return f"No se encontraron restaurantes con el nombre {nombre_restaurante}."
+        return pd.DataFrame()  # Devuelve un DataFrame vacío si no se encuentra el restaurante
 
     # Obtener el gmap_id del restaurante
     gmap_id_restaurante = df_restaurante.iloc[0]['gmap_id']
@@ -179,7 +107,7 @@ def recomendacion_reviews_similares(df_unificado, nombre_restaurante, top_n=5):
     df_reseñas_restaurante = df_unificado[(df_unificado['text'].notnull()) & (df_unificado['gmap_id'] == gmap_id_restaurante)]
 
     if df_reseñas_restaurante.empty:
-        return f"No se encontraron reseñas para el restaurante {nombre_restaurante}."
+        return pd.DataFrame()  # Devuelve un DataFrame vacío si no se encuentran reseñas
 
     # Crear la matriz TF-IDF para las reseñas combinadas
     tfidf = TfidfVectorizer(stop_words='english')
@@ -203,20 +131,3 @@ def recomendacion_reviews_similares(df_unificado, nombre_restaurante, top_n=5):
         recomendaciones = pd.DataFrame()  # DataFrame vacío si no hay recomendaciones
 
     return recomendaciones
-
-# Interfaz de Streamlit
-st.title("Recomendaciones de Reseñas Similares")
-
-# Inputs del usuario
-nombre_restaurante = st.text_input("Ingrese el nombre del restaurante:", "Pizzeria XYZ")
-top_n = st.number_input("Cantidad de recomendaciones:", min_value=1, max_value=10, value=5, key='top_n_similares')
-
-# Botón para ejecutar la recomendación
-if st.button("Obtener Recomendaciones de Reseñas Similares", key='btn_similares'):
-    resultado = recomendacion_reviews_similares(df_business, nombre_restaurante, top_n)
-
-    if isinstance(resultado, str):
-        st.write(resultado)
-    else:
-        st.write("Top recomendaciones:")
-        st.dataframe(resultado)  # Mostrar el DataFrame como tabla
