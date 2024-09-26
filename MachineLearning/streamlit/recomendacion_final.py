@@ -2,12 +2,13 @@ import streamlit as st
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+import requests
 
 # Cargar el archivo de datos (ajusta la ruta a tu archivo)
 #df_business = pd.read_parquet(r'C:\Users\GASTON\Desktop\PROYECTO FINAL\DATA\locales_google.parquet')
 #df_reviews = pd.read_parquet(r'C:\Users\GASTON\Desktop\PROYECTO FINAL\DATA\ml_unificado.parquet')
-df_business = pd.read_csv('locales_google.csv')
-df_reviews = pd.read_csv('ml_unificado.csv')
+df_business = pd.read_csv('https://raw.githubusercontent.com/gastorellano/epicurean_project/refs/heads/main/MachineLearning/streamlit/locales_google.csv')
+df_reviews = pd.read_csv('https://raw.githubusercontent.com/gastorellano/epicurean_project/refs/heads/main/MachineLearning/streamlit/ml_unificado.csv')
 
 def weighted_rating(x, m, C):
     v = x['num_of_reviews']

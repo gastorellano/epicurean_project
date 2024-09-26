@@ -11,8 +11,9 @@ from recomendacion_final import (
 try:
     #df_business = pd.read_parquet(r'C:\Users\GASTON\Desktop\PROYECTO FINAL\DATA\locales_google.parquet')
     #df_reviews = pd.read_parquet(r'C:\Users\GASTON\Desktop\PROYECTO FINAL\DATA\ml_unificado.parquet')
-    df_business = pd.read_csv('locales_google.csv')
-    df_reviews = pd.read_csv('ml_unificado.csv')
+    df_business = pd.read_csv('https://raw.githubusercontent.com/gastorellano/epicurean_project/refs/heads/main/MachineLearning/streamlit/locales_google.csv')
+    df_reviews = pd.read_csv('https://raw.githubusercontent.com/gastorellano/epicurean_project/refs/heads/main/MachineLearning/streamlit/ml_unificado.csv')
+    
 except Exception as e:
     st.error(f"Error al cargar los datos: {e}")
 
@@ -39,7 +40,7 @@ st.markdown(
 )
 
 # Agregar el logo
-st.image("C:/Users/GASTON/Desktop/PROYECTO FINAL/IMG/logo_epicurean.jpeg", width=150)
+st.image("https://raw.githubusercontent.com/gastorellano/epicurean_project/main/IMG/logo_epicurean.jpeg", width=150)
 # Título de la aplicación
 st.title("Recomendación de Establecimientos Gastronómicos")
 
