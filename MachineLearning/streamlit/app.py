@@ -11,8 +11,8 @@ from recomendacion_final import (
 try:
     #df_business = pd.read_parquet(r'C:\Users\GASTON\Desktop\PROYECTO FINAL\DATA\locales_google.parquet')
     #df_reviews = pd.read_parquet(r'C:\Users\GASTON\Desktop\PROYECTO FINAL\DATA\ml_unificado.parquet')
-    df_business = pd.read_parquet('../../DATA/locales_google.parquet')
-    df_reviews = pd.read_parquet('../../DATA/ml_unificado.parquet')
+    df_business = pd.read_parquet('locales_google.parquet')
+    df_reviews = pd.read_parquet('ml_unificado.parquet')
 except Exception as e:
     st.error(f"Error al cargar los datos: {e}")
 
