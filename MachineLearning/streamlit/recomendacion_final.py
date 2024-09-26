@@ -7,7 +7,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 #df_business = pd.read_parquet(r'C:\Users\GASTON\Desktop\PROYECTO FINAL\DATA\locales_google.parquet')
 #df_reviews = pd.read_parquet(r'C:\Users\GASTON\Desktop\PROYECTO FINAL\DATA\ml_unificado.parquet')
 df_business = pd.read_csv('locales_google.csv')
-df_reviews = pd.read_csv('https://drive.google.com/drive/u/0/folders/1G9xDDtcIDd5knWGmppEnS3WFPQNdG6hV')
+df_reviews = pd.read_csv('ml_unificado.csv')
 
 def weighted_rating(x, m, C):
     v = x['num_of_reviews']
