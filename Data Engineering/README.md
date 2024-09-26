@@ -75,7 +75,13 @@ La automatización se ha implementado utilizando **Apache Airflow**. Los DAGs de
 Se ha establecido una conexión con la **API de Google Maps** para realizar una carga incremental de los registros del **Data Warehouse**, a través de un DAG programado en **Airflow**.
 
 ### 9. Validación de Datos
-Se han implementado pasos de validación de datos dentro del pipeline ETL. Esto incluye la verificación de formatos y la consistencia de los datos antes de ser cargados al **Data Warehouse**, garantizando la calidad de la información almacenada.
+Se han implementado pasos de validación de datos dentro del pipeline ETL, lo que incluye la verificación de formatos y la consistencia de los datos, garantizando la calidad de la información almacenada.
+Frente a la carga incremental periódica, si bien existen etapas de validación previa y posterior, y que hay un trabajo constante de nuestro equipo de Análisis de Datos para identificar posibles errores, también hemos configurado un proceso de validación automática de datos utilizando Apache Airflow. 
+La validación de datos se lleva a cabo tras la carga en BigQuery. En este punto, ejecutamos verificaciones para asegurar que los registros se hayan insertado correctamente. Esta etapa es crucial, ya que garantiza la integridad de la información antes de que esté disponible para su uso.
+El sistema realiza verificaciones de la carga de datos sin intervención manual, utilizando herramientas como Apache Airflow para gestionar el flujo de trabajo. Esto garantiza que los datos sean revisados y confirmados automáticamente después de ser cargados, mejorando la eficiencia y reduciendo el riesgo de errores humanos
+Utilizando un DAG en Airflow, gestionamos notificaciones automáticas por correo electrónico. Si la carga de datos se completa con éxito, se envía un correo confirmando que los datos han sido validados correctamente. En caso de que ocurra un error, se genera un correo que notifica la falla, instando a revisar los logs de Airflow.
+Puedes ver una pequeña explicación de la validación automatizada [aquí](https://drive.google.com/file/d/1re7oSkBAKHoyelt44Z7w_rE_D7X5PmTV/view?usp=sharing).
+Este proceso de validación automática nos permite mantener la calidad de nuestros datos y optimizar la gestión de información en tiempo real. Esperamos que esta explicación haya sido útil para entender cómo funciona nuestra validación automática de datos.
 
 ### 10. Diccionario de Datos:
 Puede ser de utilidad el diccionario de los datos utilizados, a partir de las tablas y datasets.
@@ -104,5 +110,14 @@ El siguiente es un flujo detallado del proceso implementado y las tecnologías i
 5. **Consulta y Análisis**:
    - Los datos almacenados en el **Data Warehouse** son accesibles mediante **Google BigQuery**, permitiendo la realización de consultas SQL y análisis complejos.
 
-## Futuras Implementaciones
-- Implementar dashboards y reportes sobre los datos almacenados en el **Data Warehouse** utilizando herramientas como **Google Data Studio**, **Tableau** o **Power BI**.
+## Importancia de los datos
+- A partir de los datos almacenados en el **Data Warehouse**, se han creado Dashboards interactivos para permitir una visualización de impacto en el cliente, que recibirá conjuntamente a su informe de asesoramiento personalizado. También se alimenta de estos datos el sistema de recomendación, que es una propuesta de valor ofrecida a nuestros clientes, que permite a los consumidores finales obtener recomendaciones sobre establecimientos gastronómicos en el Estado de California.
+
+
+
+
+
+
+
+---
+<a href="https://www.linkedin.com/in/gaston-orellano/"><img src="/IMG/lkd.png" alt="LinkedIn" width="40"/></a>

@@ -85,15 +85,31 @@ La función ordena las reseñas en base a la similitud obtenida, priorizando aqu
 
 **Obtención de información de los restaurantes recomendados**: A partir de los índices de las reseñas más similares, la función extrae la información de los locales recomendados, como el nombre, dirección, ciudad, categoría, calificación promedio, número de reseñas, y el texto de la reseña. Si no hay recomendaciones válidas, se devuelve un DataFrame vacío.
 
-
+## Prueba del Sistema de Recomendación:
 - Crear instancia de FastAPI:
-Para desplegar el modelo en una API, se utiliza FastAPI. En el archivo sistema_recomendacion.py, se instancia la misma.
+Para desplegar el modelo en una API, se utilizó FastAPI en un principio. En el archivo sistema_recomendacion.py, se instancia la API que sirvió de base para la implementación final.
 
 - Declarar endpoints HTTP:
-En el archivo principal de la API, se declara cada uno de los endpoints que corresponden a los sistemas de recomendación desarrollados. Estos endpoints permiten la interacción con la API para realizar recomendaciones basadas en diferentes criterios.
+En el archivo principal de la API, se declararon cada uno de los endpoints que corresponden a los sistemas de recomendación desarrollados. Estos endpoints permiten la interacción con la API para realizar recomendaciones basadas en diferentes criterios.
 
-## Prueba del Sistema de Recomendación:
-Puedo ver la muestra de mi sistema de recomendación [aquí](https://drive.google.com/file/d/1L5St4tRXbFGrvCxId5KMWVALMLEPTQJ0/view?usp=sharing).
+Puedo ver la muestra del minimum viable product del sistema de recomendación [aquí](https://drive.google.com/file/d/1L5St4tRXbFGrvCxId5KMWVALMLEPTQJ0/view?usp=sharing).
+
+## Despliegue final del Sistema de Recomendación:
+Por mayor capacidad, y por la posibilidad ofrecida de personalizar mejor la interfaz visual en la que se interacciona con el Sistema, el deployment se ha realizado en Streamlit (biblioteca de Python que permite crear aplicaciones web interactivas, y ofrece una interfaz amigable para su visualización).
+
+Luego de tomar la decisión de cambiar de biblioteca, se realizaron cambios de naturaleza técnica: se ha mejorado el código para obtener mayor eficacia y menos consumo de recursos. Configurado el modelo de recomendación, y definida la interfaz gráfica, se realiza la conexión con BigQuery para alimentar al Sistema.
+Como resultado, se puede ver el modelo deployado en [este enlace](https://epicureanrecommendation.streamlit.app/).
+
+En cuanto a la visualización del modelo, hemos colocado los filtros de búsqueda en una barra lateral, para focalizar la atención sólo en los resultados en la pantalla principal. Los filtros están colocados en el orden sugerido de búsqueda, pero no existen inconvenientes si saltamos directamente a un modelo en particular.
+
+Los resultados ya no se muestran en cadenas JSON ni en tablas, sino en tarjetas de recomendación, a las cuales se les agrega un efecto hover para dar una mayor visibilidad.
+En este caso, la paleta de colores respeta la imagen de la marca EPICUREAN DATA SOLUTIONS, pero es perfectamente parametrizable de acuerdo a gustos y necesidades del cliente.
+La tarjeta de recomendación nos trae también un hipervínculo, que nos envía directamente a ese local, mostrando ubicación y más información en Google Maps.
+En cuanto a su funcionalidad, la misma no se ha perdido respecto al MVP, pero sí se ha mejorado el código que corre por detrás, lo que garantiza mejores resultados.
+
+A continuación, se puede ver una muestra del [Sistema de Recomendación de EPICUREAN Data Solutions](https://drive.google.com/file/d/1MkBBno3DnsL03j4reIyxKUHG65b0mMdx/view?usp=sharing).
+
+
 
 ---
 <a href="https://www.linkedin.com/in/gaston-orellano/"><img src="/IMG/lkd.png" alt="LinkedIn" width="40"/></a>
