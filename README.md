@@ -213,8 +213,10 @@ Para comprender mejor su funcionamiento, se puede consultar su [archivo descript
   <tr>
     <td align="center">Data Engineer</td>
     <td align="center">Data Engineer</td>
-    <td align="center">Data Analyst / Data Engineer</td>
-    <td align="center">Team Manager / Data Analyst / Data Scientist</td>
+    <td align="center">Data Analyst <br> Data Engineer</td>
+    <td align="center">Team Manager <br>
+    Data Analyst <br>
+     Data Scientist</td>
   </tr>
 
   <tr>
