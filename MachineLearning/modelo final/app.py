@@ -1,5 +1,8 @@
 import streamlit as st
 import pandas as pd
+import os
+from google.cloud import bigquery
+from google.oauth2 import service_account
 from recomendacion_final import (
     recomendacion_comida_ciudad,
     recomendacion_por_zona,
@@ -7,15 +10,38 @@ from recomendacion_final import (
     recomendacion_reviews_similares
 )
 
-# Cargar los DataFrames en memoria
-try:
-    #df_business = pd.read_parquet(r'C:\Users\GASTON\Desktop\PROYECTO FINAL\DATA\locales_google.parquet')
-    #df_reviews = pd.read_parquet(r'C:\Users\GASTON\Desktop\PROYECTO FINAL\DATA\ml_unificado.parquet')
-    df_business = pd.read_csv('https://raw.githubusercontent.com/gastorellano/epicurean_project/refs/heads/main/MachineLearning/streamlit/locales_google.csv')
-    df_reviews = pd.read_csv('https://raw.githubusercontent.com/gastorellano/epicurean_project/refs/heads/main/MachineLearning/streamlit/ml_unificado.csv')
-    
-except Exception as e:
-    st.error(f"Error al cargar los datos: {e}")
+# Configurar el cliente de BigQuery
+credentials = service_account.Credentials.from_service_account_file(
+    os.getenv('GOOGLE_APPLICATION_CREDENTIALS'))
+ 
+client = bigquery.Client(credentials=credentials)
+
+# Consulta a BigQuery para cargar los datos
+def cargar_datos_bigquery(query):
+    try:
+        df = client.query(query).to_dataframe()
+        return df
+    except Exception as e:
+        st.error(f"Error al cargar los datos desde BigQuery: {e}")
+        return pd.DataFrame()
+
+# Query para los datos de locales
+query_business = """
+    SELECT * FROM `epicurean_project.recommendation_data.locales_google`
+"""
+
+# Query para los datos de reseñas
+query_reviews = """
+    SELECT * FROM `epicurean_project.recommendation_data.ml_unificado`
+"""
+
+# Cargar los DataFrames en memoria desde BigQuery
+df_business = cargar_datos_bigquery(query_business)
+df_reviews = cargar_datos_bigquery(query_reviews)
+
+if df_business.empty or df_reviews.empty:
+    st.error("Error al cargar los datos. Verifica las consultas o la conexión a BigQuery.")
+
 
 # Estilos para encuadrar las tarjetas con efecto hover
 st.markdown(
