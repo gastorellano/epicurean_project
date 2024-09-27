@@ -183,6 +183,7 @@ Filtros personalizables: Los diferentes filtros permiten mostrar información di
 
 Automatización en la carga de información: el dashboard es alimentado por un DataWarehouse: se conecta a BigQuery y, a partir de allí, se obtiene la información en tiempo real necesaria para comprender el análisis realizado.
 
+Puedo acceder al Dashboard [aquí](/Data%20Analytics/Epicurean_Project.pbix)
 ## Sistema de Recomendación
 Se ha desplegado un sistema de recomendación, al que se puede acceder [aquí](https://epicureanrecommendation.streamlit.app/).
 <p align="center">
