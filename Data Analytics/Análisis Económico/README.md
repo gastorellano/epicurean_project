@@ -18,4 +18,6 @@ En esta primera instancia, se descargaron datos localmente, y se realizó un [pr
 ## Análisis Económico
 Es preciso mencionar que se puede visualizar [aquí](/Data%20Analytics/Análisis%20Económico/Análisis_económico.ipynb) el análisis económico detallado con sus respectivos avances y fundado en gráficos estadísticos.
 
-(conclusiones pendientes)
+El análisis económico pretende dar información adicional a nuestros clientes, pero no abarcar la totalidad de las cuestiones vinculadas a gastos, impuestos o costos de implementación de un nuevo comercio.
+Es menester recordar que el objeto de este proyecto es realizar un análisis basado en reseñas y sentimientos, para identificar preferencias de consumo en diversas zonas. A partir de allí, el informe económico excede el marco de ésta investigación. Se trata, en definitiva, de una propuesta adicional que efectivamente aportará valor al usuario.
+
