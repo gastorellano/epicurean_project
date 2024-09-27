@@ -129,13 +129,13 @@ Para establecer una línea de referencia inicial, los datos del trimestre anteri
 
 ---
 
-**KPI 2: Incrementar en un 5% trimestral la oferta de servicios externos.**
+**KPI 2: Aumentar el 50% por trimestre la cantidad de valoraciones sobre locales con servicios externos, medido desde el valor inicial.**
 
-**Definición:** Este KPI tiene el objetivo de aumentar el consumo en los servicios que no requieren consumo en el local (por ejemplo, pick up o delivery), que son más habituales en zonas tech.
+**Definición:** Este KPI tiene como objetivo medir el crecimiento en la cantidad de reseñas de locales que ofrecen servicios externos (delivery, pick up, etc.) en el periodo seleccionado. Un aumento en las valoraciones sugiere un crecimiento en la satisfacción del cliente y en la popularidad de estos servicios.
 
 **Fórmula:**
 
-*KPI = ((Servicios externos (tri actual) − Servicios externos (tri ant)) / Servicios externos (tri ant)) x 100%*
+*KPI = (Valoraciones (tri actual) − Valoraciones (tri inicial)) / Valoraciones (tri inicial) × 100%*
 
 ---
 
