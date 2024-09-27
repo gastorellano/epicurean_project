@@ -139,13 +139,13 @@ Para establecer una línea de referencia inicial, los datos del trimestre anteri
 
 ---
 
-**KPI 3: Incrementar en un 5% cada bimestre la cantidad de valoraciones de 4 y 5 estrellas.**
+**KPI 3: Incrementar el promedio de valoración del establecimiento en un 0.01% por bimestre, respecto a la calificación inicial.**
 
-**Definición:** Este KPI mide la evolución de la percepción positiva de los clientes sobre la calidad del establecimiento, buscando un crecimiento continuo en las valoraciones positivas (4 o más estrellas) cada dos meses.
+**Definición:** Este KPI mide el aumento porcentual en el promedio de calificaciones tomando como referencia el primer valor en el período analizado, buscando un crecimiento en la percepción positiva de los clientes, cada dos meses.
 
 **Fórmula:**
+KPI = ((Promedio Calificación (bimestre actual) − Promedio Calificación (bimestre inicial)) / Promedio Calificación(bimestre inicial)) x 100%
 
-*KPI = ((Cant. ≥4 (bimestre actual) − Cant. ≥4 (bimestre ant)) / Cant. ≥4 (bimestre ant)) x 100%*
 
 ## Metodología de Trabajo
 En EPICUREAN implementamos la metodología SCRUM, que se caracteriza por su flexibilidad, permitiendo adaptarse rápidamente a los cambios y necesidades del proyecto, y fomentando la transparencia a través de una comunicación abierta y constante. Además, promueve la responsabilidad compartida dentro del equipo, asegurando que todos estén alineados con los objetivos comunes. SCRUM se organiza en iteraciones llamadas sprints, que permiten recibir feedback continuo y mejorar de manera incremental.
