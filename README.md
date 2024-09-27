@@ -115,14 +115,17 @@ Para acceder a las conclusiones generales, puede revisar el Análisis Explorator
 ## KPI
 Se han definido los siguientes KPI:
 
-**KPI 1: Incrementar en un 5% trimestral la cantidad de reseñas del establecimiento gastronómico.**  
+**KPI 1: Incrementar en un 5% trimestral la cantidad de reseñas del establecimiento gastronómico, tomando como base el total acumulado de reseñas desde el primer registro.** 
 
 **Definición:** Este KPI mide la popularidad y visibilidad de los establecimientos en función del crecimiento en el número de reseñas obtenidas en un período determinado. Se enfoca en monitorear cómo las estrategias de marketing y servicio al cliente están incentivando a los consumidores a dejar reseñas.  
 Para establecer una línea de referencia inicial, los datos del trimestre anterior se calcularán utilizando los promedios de las reseñas obtenidas por los locales de la competencia directa en el mismo período. Esto permitirá evaluar el rendimiento del establecimiento en relación con sus competidores más cercanos.
 
 **Fórmula:**
 
-*KPI = ((Cant. Reseñas (tri actual) − Cant. Reseñas (tri ant)) / Cant. Reseñas (tri ant)) x 100%*
+*KPI = ((Total Acumulado Reseñas (tri actual) − Total Acumulado Reseñas (tri inicial)) / Total Acumulado Reseñas (tri inicial)) x 100%*
+
+*Establecer objetivo:*
+*Objetivo KPI = Total Acumulado Reseñas (tri inicial) × (1 + 0.05) ^ Número de Trimestres Transcurridos*
 
 ---
 
