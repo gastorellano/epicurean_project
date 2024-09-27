@@ -113,7 +113,7 @@ Para acceder a las conclusiones generales, puede revisar el Análisis Explorator
 
 
 ## KPI
-Se han definido los siguientes KPI:
+Tras el [análisis realizado](/Data%20Analytics/Análisis%20Económico/determinacion_kpi.ipynb) se han definido los siguientes KPI:
 
 **KPI 1: Incrementar en un 5% trimestral la cantidad de reseñas del establecimiento gastronómico, tomando como base el total acumulado de reseñas desde el primer registro.** 
 
